@@ -404,3 +404,432 @@
   }
 }
 
+
+/* ==========================================================================\n   NEXORA MOBILE HARDENING PASS\n   Added without changing the desktop layout.\n   ========================================================================== */
+
+/* Prevent flex/grid children from forcing the viewport wider than the device. */
+.container,
+.navbar-inner,
+.page-view,
+.hero-grid,
+.discovery-layout-wrapper,
+.university-page-grid,
+.programme-page-grid,
+.product-card-box,
+.univ-main-content,
+.prog-main-content {
+  min-width: 0;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .navbar-inner {
+    min-width: 0;
+  }
+
+  .brand-logo {
+    min-width: 0;
+  }
+
+  .brand-logo > div:last-child {
+    min-width: 0;
+  }
+
+  .nav-actions {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ---------- MOBILE HEADER ---------- */
+  .navbar-inner {
+    height: 64px;
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    font-size: 1.05rem;
+    gap: 7px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .brand-logo-icon {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+
+  .brand-tagline-sub {
+    display: none !important;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+    gap: 5px;
+    flex: 0 0 auto;
+  }
+
+  .nav-actions > .btn-primary,
+  .nav-shortlist-btn {
+    min-height: 36px;
+    line-height: 1.1;
+  }
+
+  .nav-actions > .btn-primary {
+    padding: 6px 9px;
+    font-size: 0.7rem;
+  }
+
+  .nav-shortlist-btn {
+    padding: 6px 9px;
+    font-size: 0.7rem;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+    flex: 0 0 40px;
+    width: 40px;
+    min-width: 40px;
+    height: 36px;
+    padding: 0;
+  }
+
+  .nav-links.mobile-open {
+    top: 64px;
+    max-height: calc(100dvh - 64px);
+    padding: 16px;
+  }
+
+  .nav-links.mobile-open .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ---------- GENERAL MOBILE SPACING ---------- */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-section {
+    padding-top: 18px;
+    padding-bottom: 28px;
+  }
+
+  .hero-grid {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .hero-headline,
+  .hero-supporting-text,
+  .badge-trust {
+    max-width: 100%;
+  }
+
+  .hero-supporting-text {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta-group {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-cta-group .btn {
+    min-height: 44px;
+  }
+
+  /* ---------- SEARCH CONTROLS ---------- */
+  .universal-search-wrapper,
+  .career-search-box,
+  .search-input-container {
+    min-width: 0;
+  }
+
+  .search-input-container {
+    width: 100%;
+  }
+
+  /* ---------- CATALOGUE GRIDS ---------- */
+  .all-programmes-grid,
+  .universities-grid,
+  .discovery-main .all-programmes-grid,
+  .discovery-main .universities-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .programme-card,
+  .university-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .programme-card-body,
+  .university-card-body {
+    padding: 18px;
+  }
+
+  .programme-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Keep catalogue filter controls from creating horizontal overflow. */
+  .programme-faceted-container {
+    padding: 16px;
+    width: 100%;
+  }
+
+  .programme-faceted-grid {
+    grid-template-columns: 1fr !important;
+    min-width: 0;
+  }
+
+  .programme-faceted-header,
+  .page-breadcrumb-nav,
+  .box-header-flex {
+    min-width: 0;
+  }
+
+  /* ---------- DETAIL PAGE CONTENT ---------- */
+  .product-card-box,
+  .sidebar-sticky-card {
+    padding: 20px 16px;
+  }
+
+  .box-title {
+    font-size: 1.2rem;
+  }
+
+  .univ-sidebar,
+  .prog-sidebar {
+    position: static;
+  }
+
+  .univ-quick-facts-strip,
+  .placement-info-grid,
+  .univ-stats-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prog-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* ---------- HORIZONTAL COMPONENTS ---------- */
+  .sticky-subnav {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 18px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sticky-subnav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .compare-tabs-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .compare-tabs-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .compare-tabs-bar .btn {
+    flex: 0 0 auto;
+  }
+
+  /* ---------- TOUCH TARGETS ---------- */
+  .back-link-btn,
+  .filter-tab-pills .pill-btn,
+  .programme-tab-btn,
+  .wishlist-tab,
+  .compare-tab,
+  .route-mode-tab {
+    min-height: 42px;
+  }
+
+  /* ---------- MOBILE STICKY ACTION BAR ---------- */
+  .mobile-sticky-bottom-bar {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+
+  body:has(.mobile-sticky-bottom-bar) {
+    padding-bottom: 76px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .navbar-inner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* At very narrow widths the header keeps the primary route CTA + menu. */
+  .nav-shortlist-btn {
+    display: none !important;
+  }
+
+  .nav-actions > .btn-primary {
+    padding: 6px 8px;
+    font-size: 0.66rem;
+  }
+
+  .mobile-menu-toggle {
+    flex-basis: 38px;
+    width: 38px;
+    min-width: 38px;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.45rem, 7vw, 1.8rem);
+  }
+
+  .hero-supporting-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .search-input-container {
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+
+  .search-action-btn {
+    padding: 8px 10px;
+  }
+
+  .compass-hero-card {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .compass-container {
+    width: min(275px, calc(100vw - 36px));
+    height: min(275px, calc(100vw - 36px));
+  }
+
+  .direction-node {
+    max-width: 82px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .direction-dropdown-menu {
+    width: min(240px, calc(100vw - 28px));
+    max-width: calc(100vw - 28px);
+  }
+
+  .univ-quick-facts-strip,
+  .placement-info-grid,
+  .univ-stats-cards-grid,
+  .prog-gallery-grid,
+  .experience-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-view-header {
+    padding: 10px 0;
+  }
+
+  .page-breadcrumb-nav {
+    align-items: stretch;
+  }
+
+  .back-link-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .breadcrumb-trail {
+    width: 100%;
+    font-size: 0.78rem;
+  }
+
+  .product-card-box,
+  .sidebar-sticky-card {
+    border-radius: 14px;
+  }
+
+  .admission-waypoints {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-backdrop,
+  .faq-popup-overlay {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-logo {
+    font-size: 0.95rem;
+  }
+
+  .brand-logo-icon {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+
+  .nav-actions > .btn-primary {
+    font-size: 0.62rem;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .hero-headline {
+    font-size: 1.4rem;
+  }
+
+  .compass-container {
+    width: min(255px, calc(100vw - 28px));
+    height: min(255px, calc(100vw - 28px));
+  }
+}
+
+/* Respect users who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
